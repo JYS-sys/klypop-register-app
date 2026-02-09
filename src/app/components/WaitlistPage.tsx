@@ -2,14 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { Plus, Minus, Loader2 } from "lucide-react";
 
 export function WaitlistPage() {
-  const router = useRouter();
   const [showReferral, setShowReferral] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     firstName: '',
@@ -43,8 +41,19 @@ export function WaitlistPage() {
         throw new Error(data.error || "Une erreur est survenue");
       }
 
-      // Email sent successfully → redirect to success page
-      router.push("/waitlist/success");
+      setSubmitStatus("success");
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        companyName: '',
+        email: '',
+        phone: '',
+        userType: 'client',
+        city: '',
+        referralCode: ''
+      });
+      setShowReferral(false);
     } catch (error) {
       setSubmitStatus("error");
       setErrorMessage(
@@ -269,7 +278,16 @@ export function WaitlistPage() {
                   </p>
                 </div>
 
-                {/* Error Message */}
+                {/* Success/Error Messages */}
+                {submitStatus === "success" && (
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <p className="text-green-800 text-sm">
+                      ✅ Merci ! Vous êtes maintenant sur la liste d&apos;attente KLYPOP. 
+                      Nous vous contacterons bientôt !
+                    </p>
+                  </div>
+                )}
+
                 {submitStatus === "error" && (
                   <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                     <p className="text-red-800 text-sm">
