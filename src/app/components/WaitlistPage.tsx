@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Plus, Minus, Loader2 } from "lucide-react";
 
 export function WaitlistPage() {
@@ -43,6 +43,7 @@ export function WaitlistPage() {
         throw new Error(data.error || "Une erreur est survenue");
       }
 
+      // Email sent successfully → redirect to success page
       router.push("/waitlist/success");
     } catch (error) {
       setSubmitStatus("error");

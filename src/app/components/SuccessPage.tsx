@@ -16,16 +16,18 @@ export function SuccessPage() {
         </h1>
 
         <p className="text-xl text-gray-600 mb-12 leading-relaxed">
-          Votre inscription a été confirmée avec succès. Vous êtes maintenant sur notre liste
-          d&apos;attente et vous serez parmi les premiers à découvrir KLYPOP lors de notre
-          lancement.
+          Votre inscription a été confirmée avec succès. Vous êtes maintenant sur
+          notre liste d&apos;attente et vous serez parmi les premiers à découvrir
+          KLYPOP lors de notre lancement.
         </p>
 
         {/* Info Cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <div className="bg-gray-50 rounded-3xl p-6 text-left">
             <div className="w-3 h-3 rounded-full bg-gradient-to-r from-[#00D4FF] to-[#6B8EFF] mb-4" />
-            <h3 className="text-gray-900 font-semibold mb-2">E-mail de confirmation</h3>
+            <h3 className="text-gray-900 font-semibold mb-2">
+              E-mail de confirmation
+            </h3>
             <p className="text-sm text-gray-600">
               Vous recevrez un e-mail de confirmation dans quelques instants
             </p>
@@ -33,7 +35,9 @@ export function SuccessPage() {
 
           <div className="bg-gray-50 rounded-3xl p-6 text-left">
             <div className="w-3 h-3 rounded-full bg-gradient-to-r from-[#6B8EFF] to-[#9D7DFF] mb-4" />
-            <h3 className="text-gray-900 font-semibold mb-2">Accès prioritaire</h3>
+            <h3 className="text-gray-900 font-semibold mb-2">
+              Accès prioritaire
+            </h3>
             <p className="text-sm text-gray-600">
               Vous serez informé dès le lancement dans votre ville
             </p>
@@ -41,7 +45,9 @@ export function SuccessPage() {
 
           <div className="bg-gray-50 rounded-3xl p-6 text-left">
             <div className="w-3 h-3 rounded-full bg-gradient-to-r from-[#00D4FF] to-[#9D7DFF] mb-4" />
-            <h3 className="text-gray-900 font-semibold mb-2">Offres exclusives</h3>
+            <h3 className="text-gray-900 font-semibold mb-2">
+              Offres exclusives
+            </h3>
             <p className="text-sm text-gray-600">
               Profitez d&apos;avantages réservés aux premiers utilisateurs
             </p>
